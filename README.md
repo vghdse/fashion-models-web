@@ -15,29 +15,33 @@ Project is created with:
 * JQuery
 
 
-## Credits
+<h2 align="center">Credits</h2>
 
-**Developed by [Darrell Mucheri](https://mrfrankinc.vercel.app)**  
-Frontend Developer |  Web Design Experiences
+<p align="center">
+  <strong>Developed by <a href="https://mrfrankinc.vercel.app" target="_blank">Darrell Mucheri</a></strong><br/>
+  Frontend Developer | Web Design Experiences
+</p>
 
-![Darrell Mucheri](https://files.catbox.moe/zszzct.jpg)
+<p align="center">
+  <img src="https://files.catbox.moe/zszzct.jpg" alt="Darrell Mucheri" width="150" style="border-radius: 50%; border: 4px solid #32CD32; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+</p>
 
-### Connect with me:
+<p align="center">
+  <a href="https://twitter.com/yourusername" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" width="30"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/yourusername" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30"/>
+  </a>
+  &nbsp;
+  <a href="https://linkedin.com/in/yourusername" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30"/>
+  </a>
+  &nbsp;
+  <a href="mailto:your@email.com">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" width="30"/>
+  </a>
+</p>
 
-<a href="https://twitter.com/yourusername" target="_blank">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter" width="30"/>
-</a>
-&nbsp;
-<a href="https://github.com/yourusername" target="_blank">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30"/>
-</a>
-&nbsp;
-<a href="https://linkedin.com/in/yourusername" target="_blank">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30"/>
-</a>
-&nbsp;
-<a href="mailto:your@email.com">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" width="30"/>
-</a>
-
-> Theme crafted with passion for the fashion & modeling industry.
+<p align="center"><em>Theme crafted with passion for the fashion & modeling industry.</em></p>
