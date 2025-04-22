@@ -1,9 +1,9 @@
-# FashionModels
-FashionModels is a fashion website, which is use to promote models and fashion designer.
+# Model Musa Int
+Model Musa Int is a fashion website, which is use to promote models and fashion designer.
 
 
 ## Landing Page
-![Landing Page](assets/images/ui_short.jpg)
+![Landing Page](https://files.catbox.moe/io727c.jpg)
 
 
 ## Technologies
