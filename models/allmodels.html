@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Models | Model Muse International</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #32cd32; /* Lime green */
+      --secondary-color: #000000;
+      --light-color: #ffffff;
+      --dark-color: #121212;
+      --text-color: #333333;
+      --light-gray: #f5f5f5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--light-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--light-color);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: var(--primary-color);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    /* Page Header */
+    .page-header {
+      margin-top: 80px;
+      padding: 60px 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                  url('https://images.unsplash.com/photo-1483181957632-8bda974cbc91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      color: var(--light-color);
+      text-align: center;
+    }
+    
+    .page-header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    /* Filter Section */
+    .filter-section {
+      padding: 40px 0;
+      background-color: var(--light-gray);
+    }
+    
+    .filter-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+    
+    .filter-group {
+      margin-bottom: 15px;
+    }
+    
+    .filter-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .filter-group select,
+    .filter-group input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .search-box {
+      grid-column: span 2;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 10px 15px;
+      padding-left: 40px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-color) url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svgs/solid/search.svg') no-repeat 15px center;
+      background-size: 15px;
+    }
+    
+    .filter-actions {
+      grid-column: span 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .filter-results {
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+    
+    .reset-btn {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    
+    /* Models Grid */
+    .models-grid-section {
+      padding: 60px 0;
+    }
+    
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .model-card {
+      background-color: var(--light-color);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .model-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .model-image {
+      height: 350px;
+      overflow: hidden;
+    }
+    
+    .model-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .model-card:hover .model-image img {
+      transform: scale(1.05);
+    }
+    
+    .model-info {
+      padding: 20px;
+    }
+    
+    .model-name {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+    }
+    
+    .model-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .stat-item i {
+      color: var(--primary-color);
+      margin-right: 5px;
+      font-size: 0.9rem;
+    }
+    
+    .model-location {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .view-profile {
+      display: inline-block;
+      padding: 8px 20px;
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .view-profile:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    
+    .pagination a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin: 0 5px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    
+    .pagination a.active,
+    .pagination a:hover {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+    
+    .footer-col p {
+      margin-bottom: 15px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--light-color);
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: var(--light-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .filter-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .search-box {
+        grid-column: span 3;
+      }
+      
+      .filter-actions {
+        grid-column: span 3;
+      }
+      
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .filter-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .search-box {
+        grid-column: span 1;
+      }
+      
+      .filter-actions {
+        grid-column: span 1;
+      }
+      
+      .models-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .models-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">Model<span>Muse</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html" class="active">Models</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Models</h1>
+      <p>Discover Zimbabwe's finest modeling talent</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-container">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search models...">
+        </div>
+        
+        <div class="filter-group">
+          <label for="gender-filter">Gender</label>
+          <select id="gender-filter">
+            <option value="all">All Genders</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="age-filter">Age Range</label>
+          <select id="age-filter">
+            <option value="all">All Ages</option>
+            <option value="16-20">16-20</option>
+            <option value="21-25">21-25</option>
+            <option value="26-30">26-30</option>
+            <option value="31+">31+</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="height-filter">Height</label>
+          <select id="height-filter">
+            <option value="all">All Heights</option>
+            <option value="150-170">150-170cm</option>
+            <option value="171-180">171-180cm</option>
+            <option value="181-190">181-190cm</option>
+            <option value="191+">191cm+</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="sort-by">Sort By</label>
+          <select id="sort-by">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="height-asc">Height: Low to High</option>
+            <option value="height-desc">Height: High to Low</option>
+            <option value="age-asc">Age: Young to Old</option>
+            <option value="age-desc">Age: Old to Young</option>
+          </select>
+        </div>
+        
+        <div class="filter-actions">
+          <div class="filter-results" id="results-count">Showing 12 models</div>
+          <button class="reset-btn" id="reset-filters">Reset Filters</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Grid Section -->
+  <section class="models-grid-section">
+    <div class="container">
+      <div class="models-grid" id="models-container">
+        <!-- Model cards will be dynamically inserted here -->
+      </div>
+      
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>ModelMuse</h3>
+          <p>Zimbabwe's premier modeling agency representing diverse talent for the global fashion industry.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="models.html">Our Models</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 45 Heritage Drive, Harare, Zimbabwe</p>
+          <p><i class="fas fa-phone"></i> +263 71 211 8126</p>
+          <p><i class="fas fa-envelope"></i> info@modelmuse.co.zw</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 ModelMuse International. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sample model data
+    const models = [
+      {
+        id: 1,
+        name: "Nadia Johnson",
+        gender: "female",
+        age: 24,
+        height: 180,
+        location: "Harare, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2023-01-15"
+      },
+      {
+        id: 2,
+        name: "Tendai Moyo",
+        gender: "male",
+        age: 22,
+        height: 185,
+        location: "Bulawayo, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80",
+        joined: "2022-11-10"
+      },
+      {
+        id: 3,
+        name: "Sarah Chikowore",
+        gender: "female",
+        age: 19,
+        height: 178,
+        location: "Mutare, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2023-03-05"
+      },
+      {
+        id: 4,
+        name: "David Mandaza",
+        gender: "male",
+        age: 27,
+        height: 188,
+        location: "Harare, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2021-08-22"
+      },
+      {
+        id: 5,
+        name: "Rumbidzai Mufaro",
+        gender: "female",
+        age: 21,
+        height: 175,
+        location: "Gweru, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2022-09-14"
+      },
+      {
+        id: 6,
+        name: "Takudzwa Chiweshe",
+        gender: "male",
+        age: 25,
+        height: 182,
+        location: "Harare, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2022-05-30"
+      },
+      {
+        id: 7,
+        name: "Nyasha Makombe",
+        gender: "female",
+        age: 23,
+        height: 177,
+        location: "Masvingo, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        joined: "2023-02-18"
+      },
+      {
+        id: 8,
+        name: "Tinashe Marufu",
+        gender: "male",
+        age: 20,
+        height: 190,
+        location: "Harare, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2023-04-02"
+      },
+      {
+        id: 9,
+        name: "Chiedza Mubaiwa",
+        gender: "female",
+        age: 18,
+        height: 173,
+        location: "Chitungwiza, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80",
+        joined: "2023-05-15"
+      },
+      {
+        id: 10,
+        name: "Farai Chidemo",
+        gender: "male",
+        age: 26,
+        height: 184,
+        location: "Bulawayo, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2021-12-10"
+      },
+      {
+        id: 11,
+        name: "Rutendo Nyoni",
+        gender: "female",
+        age: 22,
+        height: 179,
+        location: "Harare, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1286&q=80",
+        joined: "2022-08-05"
+      },
+      {
+        id: 12,
+        name: "Tawanda Sibanda",
+        gender: "male",
+        age: 24,
+        height: 187,
+        location: "Kadoma, Zimbabwe",
+        image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        joined: "2022-10-22"
+      }
+    ];
+
+    // DOM elements
+    const modelsContainer = document.getElementById('models-container');
+    const searchInput = document.getElementById('search-input');
+    const genderFilter = document.getElementById('gender-filter');
+    const ageFilter = document.getElementById('age-filter');
+    const heightFilter = document.getElementById('height-filter');
+    const sortBy = document.getElementById('sort-by');
+    const resetBtn = document.getElementById('reset-filters');
+    const resultsCount = document.getElementById('results-count');
+
+    // Initial render
+    renderModels(models);
+
+    // Event listeners for filters
+    searchInput.addEventListener('input', filterModels);
+    genderFilter.addEventListener('change', filterModels);
+    ageFilter.addEventListener('change', filterModels);
+    heightFilter.addEventListener('change', filterModels);
+    sortBy.addEventListener('change', filterModels);
+    resetBtn.addEventListener('click', resetFilters);
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Function to render models
+    function renderModels(modelsToRender) {
+      modelsContainer.innerHTML = '';
+      
+      if (modelsToRender.length === 0) {
+        modelsContainer.innerHTML = '<p class="no-results">No models match your search criteria.</p>';
+        resultsCount.textContent = 'Showing 0 models';
+        return;
+      }
+      
+      modelsToRender.forEach(model => {
+        const modelCard = document.createElement('div');
+        modelCard.className = 'model-card';
+        modelCard.innerHTML = `
+          <div class="model-image">
+            <img src="${model.image}" alt="${model.name}">
+          </div>
+          <div class="model-info">
+            <h3 class="model-name">${model.name}</h3>
+            <div class="model-stats">
+              <div class="stat-item">
+                <i class="fas fa-${model.gender === 'male' ? 'mars' : 'venus'}"></i>
+                ${model.gender === 'male' ? 'Male' : 'Female'}
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-birthday-cake"></i>
+                ${model.age} yrs
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-ruler-vertical"></i>
+                ${model.height}cm
+              </div>
+            </div>
+            <p class="model-location">
+              <i class="fas fa-map-marker-alt"></i> ${model.location}
+            </p>
+            <a href="model-profile.html?id=${model.id}" class="view-profile">View Profile</a>
+          </div>
+        `;
+        modelsContainer.appendChild(modelCard);
+      });
+      
+      resultsCount.textContent = `Showing ${modelsToRender.length} model${modelsToRender.length !== 1 ? 's' : ''}`;
+    }
+
+    // Function to filter models
+    function filterModels() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const genderValue = genderFilter.value;
+      const ageValue = ageFilter.value;
+      const heightValue = heightFilter.value;
+      const sortValue = sortBy.value;
+      
+      let filteredModels = models.filter(model => {
+        // Search filter
+        const matchesSearch = model.name.toLowerCase().includes(searchTerm);
+        
+        // Gender filter
+        const matchesGender = genderValue === 'all' || model.gender === genderValue;
+        
+        // Age filter
+        let matchesAge = true;
+        if (ageValue !== 'all') {
+          const [minAge, maxAge] = ageValue.split('-').map(Number);
+          if (ageValue.endsWith('+')) {
+            matchesAge = model.age >= parseInt(ageValue);
+          } else {
+            matchesAge = model.age >= minAge && model.age <= maxAge;
+          }
+        }
+        
+        // Height filter
+        let matchesHeight = true;
+        if (heightValue !== 'all') {
+          const [minHeight, maxHeight] = heightValue.split('-').map(Number);
+          if (heightValue.endsWith('+')) {
+            matchesHeight = model.height >= parseInt(heightValue);
+          } else {
+            matchesHeight = model.height >= minHeight && model.height <= maxHeight;
+          }
+        }
+        
+        return matchesSearch && matchesGender && matchesAge && matchesHeight;
+      });
+      
+      // Sort models
+      filteredModels = sortModels(filteredModels, sortValue);
+      
+      renderModels(filteredModels);
+    }
+
+    // Function to sort models
+    function sortModels(modelsToSort, sortValue) {
+      return [...modelsToSort].sort((a, b) => {
+        switch (sortValue) {
+          case 'newest':
+            return new Date(b.joined) - new Date(a.joined);
+          case 'oldest':
+            return new Date(a.joined) - new Date(b.joined);
+          case 'height-asc':
+            return a.height - b.height;
+          case 'height-desc':
+            return b.height - a.height;
+          case 'age-asc':
+            return a.age - b.age;
+          case 'age-desc':
+            return b.age - a.age;
+          default:
+            return 0;
+        }
+      });
+    }
+
+    // Function to reset filters
+    function resetFilters() {
+      searchInput.value = '';
+      genderFilter.value = 'all';
+      ageFilter.value = 'all';
+      heightFilter.value = 'all';
+      sortBy.value = 'newest';
+      filterModels();
+    }
+  </script>
+</body>
+</html>
