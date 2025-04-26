@@ -5,6 +5,10 @@
       "destination": "/index.htm"
     },
     {
+      "source": "/contact",
+      "destination": "/models/contact.html"
+    },
+    {
       "source": "/summer",
       "destination": "/models/summer.html"
     },
