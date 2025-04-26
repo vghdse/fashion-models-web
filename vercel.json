@@ -10,7 +10,7 @@
     },
     {
       "source": "/models/",
-      "destination": "/models/mia.html"
+      "destination": "/models/allmodels.html"
     }
   ]
 }
