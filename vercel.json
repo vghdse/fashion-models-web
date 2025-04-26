@@ -16,5 +16,9 @@
       "source": "/models",
       "destination": "/models/allmodels.html"
     }
+       {
+      "source": "/404",
+      "destination": "/(.*)"
+    },
   ]
 }
