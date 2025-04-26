@@ -15,16 +15,12 @@
     {
       "source": "/models",
       "destination": "/models/allmodels.html"
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
     },
+    
     {
-      "src": "/(.*)",
+      "source": "/(.*)",
       "status": 404,
-      "dest": "/404.html"
+      "destination": "/404.html"
     }
   ]
 }
