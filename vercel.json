@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.htm"
+    },
+    {
+      "source": "/summer",
+      "destination": "/models/summer.html"
+    },
+    {
+      "source": "/models/",
+      "destination": "/models/mia.html"
+    }
+  ]
+}
