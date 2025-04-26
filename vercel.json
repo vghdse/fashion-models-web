@@ -17,8 +17,12 @@
       "destination": "/models/allmodels.html"
     }
        {
-      "source": "/404",
-      "destination": "/(.*)"
-    },
+  "handle": "filesystem"
+},
+{
+  "src": "/.*",
+  "dest": "/404.html",
+  "status": 404
+},
   ]
 }
