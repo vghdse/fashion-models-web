@@ -19,7 +19,6 @@
     
     {
       "source": "/(.*)",
-      "status": 404,
       "destination": "/404.html"
     }
   ]
