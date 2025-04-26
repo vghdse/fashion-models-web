@@ -6,7 +6,7 @@
     },
     {
       "source": "/contact",
-      "destination": "/models/contact.html"
+      "destination": "/tools/contact.html"
     },
     {
       "source": "/summer",
