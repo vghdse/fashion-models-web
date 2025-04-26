@@ -9,7 +9,7 @@
       "destination": "/models/summer.html"
     },
     {
-      "source": "/models/",
+      "source": "/models",
       "destination": "/models/allmodels.html"
     }
   ]
