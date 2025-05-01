@@ -12,6 +12,10 @@
       "source": "/summer",
       "destination": "/models/summer.html"
     },
+ {
+      "source": "/manisha",
+      "destination": "/models/Manisha.html"
+    },
     {
       "source": "/models",
       "destination": "/models/allmodels.html"
