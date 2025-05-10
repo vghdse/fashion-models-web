@@ -5,6 +5,10 @@
       "destination": "/index.htm"
     },
     {
+      "source": "/nicky",
+      "destination": "/models/Nickbae.html"
+    },
+    {
       "source": "/contact",
       "destination": "/tools/contact.html"
     },
