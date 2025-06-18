@@ -13,6 +13,10 @@
       "destination": "/models/Nickybae.html"
     },
     {
+      "source": "/Mitchell",
+      "destination": "/models/Mitchell.html"
+    },
+    {
       "source": "/contact",
       "destination": "/tools/contact.html"
     },
